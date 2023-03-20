@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Exercice To do list</title>
+   <script src="https://kit.fontawesome.com/10664defb7.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+   <div class="input__wrapper">
+      <h1>To do list</h1>
+      <div class="input__btn__wrapper">
+         <input class="name" type="text" placeholder="Name task" >
+         <input class="description" type="text" placeholder="Descript ask">
+         <input class="inputDate" id="date" type="date" format="dd-mm-yy">
+         <span class="error error__name">Veuillez remplir la case</span>
+         <span class="error error__task">Veuillez remplir la case</span>
+         <span class="error error__date">Veuillez remplir la case</span>
+         <span class="error__hide">Veuillez afficher la liste</span>
+      </div>
+      <button class="btn__add">Add task</button>
+      <div class="doneFiltre">
+         <button class="filtre__done">Done</button>
+         <button class="filtre__bedone">Be done</button>
+         <button class="filtre__showall">Show All</button>
+      </div>
+   </div>
+   <div class="hide">
+      Hide list
+   </div>
+   <div class="ask__wrapper">
+      <div class="removeall__wrapper">
+         <button class="btn__removeall">Remove All</button>
+      </div>
+      <div class="ask__box">
+      </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>

@@ -20,6 +20,8 @@ var errorHide = document.querySelector(".error__hide")
 var askDataFromLocalStorage = localStorage.getItem('askData');
 if (askDataFromLocalStorage) {
     askWrapper.innerHTML = askDataFromLocalStorage;
+    askWrapperBox.style.transform = "translateY(0)";
+    btnHide.style.transform = "translateY(0)";
 }
 
 // hauteur du wrapper chargé après reload
@@ -109,6 +111,7 @@ function rajoutTask(){
                 inputName.value = ""
                 inputDate.value = ""
                 itsDone(askTranslate)
+                taille()
             }  
         }
         // bouton vert 
@@ -146,7 +149,7 @@ function rajoutTask(){
                             askWrapper,
                             { y: 0,}
                             );
-                        }, 800)
+                        }, 500)
                         setTimeout(() => {
                             askWrapper.innerHTML = ""
                         }, 800)
@@ -156,19 +159,19 @@ function rajoutTask(){
                         setTimeout(() => {
                             askWrapperBox.style.transform = "translateY(-190px)";
                             btnHide.style.transform = "translateY(-60px)";
-                        }, 700)
+                        }, 500)
                         localStorage.removeItem('askData');
                     })
                 }
                 function removeWrapper(){
                     if (!document.querySelector('.btn__remove')) {
-                            askWrapperBox.style.transform = "translateY(-190px)";
-                            btnHide.style.transform = "translateY(-60px)";
+                        askWrapperBox.style.transform = "translateY(-190px)";
+                        btnHide.style.transform = "translateY(-60px)";
                     }
                 }
                 setInterval(function() {
                     removeWrapper()
-                  }, 1000);
+                }, 1000);
                 ///////////////////
                 // apparition du askwrapper 
                 function firstAsk(){
@@ -202,6 +205,7 @@ function rajoutTask(){
                     showDiv.replaceWith(btnHide)
                 })
                 /////////////////////////////////////////
+                // bouton de lancement 
                 document.addEventListener("keydown", function(enter){
                     if(enter.key === "Enter") {  
                         rajoutTask()
@@ -277,5 +281,10 @@ function rajoutTask(){
                         //
                     }
                 })
+                function taille() {
+                    var heightBeforeLoad = askWrapperBox.offsetHeight + 250
+                    askWrapperBox.style.height = heightBeforeLoad
+                    console.log(heightBeforeLoad + 250);
+                } 
                 
                 
